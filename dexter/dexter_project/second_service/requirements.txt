@@ -1,0 +1,11 @@
+
+Django==3.0.8
+django-grpc==1.0.6
+djangorestframework==3.10.3
+grpcio==1.32.0
+grpcio-tools==1.32.0
+protobuf
+webrtcvad
+numpy
+pyaudio
+pydub

@@ -1,0 +1,44 @@
+
+version: "3.3"
+services:
+  
+
+################################################################################################
+
+  microservice1:
+    build:
+      context: ./first_service
+
+    command: ["bash", "-c", "python manage.py runserver 0.0.0.0:8000"]
+    volumes:
+      - ./first_service:/code
+    ports:
+      - "9000:8000"
+    networks:
+      dexter_network12:
+        ipv4_address: 10.9.1.3
+
+################################################################################################
+
+  microservice2:
+    build:
+      context: ./second_service
+    command: ["bash", "-c", "python manage.py  grpcserver --autoreload --port 50059"]
+    volumes:
+      - ./second_service:/code
+    networks:
+      dexter_network12:
+        ipv4_address: 10.9.1.2
+
+################################################################################################
+
+volumes:
+  pgdata: {}
+  pga4volume: {}
+networks:
+  dexter_network12:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.9.1.0/24
+        #  gateway: 10.9.1.1

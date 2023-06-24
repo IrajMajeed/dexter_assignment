@@ -1,0 +1,17 @@
+syntax = "proto3";
+package Audio;
+import "google/protobuf/struct.proto";
+
+service Audio {
+rpc GetAudioChunkValue(GetAudioChunkRequest) returns(GetAudioChunkResponse);
+
+}
+
+message GetAudioChunkRequest{
+   repeated bytes data = 1;
+}
+message GetAudioChunkResponse{
+bool Success = 1;
+string ExceptionString = 2;
+
+}
