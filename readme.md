@@ -19,3 +19,5 @@ docker-compose up --build
 
 curl --location --request GET 'localhost:9000/audio-wave/' \
 --header 'Cookie: csrftoken=Lt89xtLc6uOshKXCsKv7ZpylA8m4RTaXuZ4rOQLvjWqobBnAgwfaDnSCLUFGuA38'
+
+I took help from google and chatgpt as I have never worked with audio files
