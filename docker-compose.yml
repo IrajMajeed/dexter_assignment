@@ -15,8 +15,8 @@ services:
     ports:
       - "9000:8000"
     networks:
-      dexter_network12:
-        ipv4_address: 10.9.1.3
+      dexter_network:
+        ipv4_address: 10.15.1.3
 
 ################################################################################################
 
@@ -27,8 +27,8 @@ services:
     volumes:
       - ./second_service:/code
     networks:
-      dexter_network12:
-        ipv4_address: 10.9.1.2
+      dexter_network:
+        ipv4_address: 10.15.1.2
 
 ################################################################################################
 
@@ -36,9 +36,9 @@ volumes:
   pgdata: {}
   pga4volume: {}
 networks:
-  dexter_network12:
+  dexter_network:
     driver: bridge
     ipam:
      config:
-       - subnet: 10.9.1.0/24
-        #  gateway: 10.9.1.1
+       - subnet: 10.15.1.0/24
+        #  gateway: 10.15.1.1

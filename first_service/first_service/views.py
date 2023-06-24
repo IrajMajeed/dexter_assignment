@@ -65,7 +65,7 @@ def grpc_call_to_process_audio_chunks(data):
     try:
         debug_logger.debug(
             f'grpc_call_to_process_audio_chunks ')
-        with grpc.insecure_channel('10.9.1.2:50059') as audio_channel:
+        with grpc.insecure_channel('10.15.1.2:50059') as audio_channel:
             stub = audio_service.AudioStub(
                 audio_channel)
             try:
